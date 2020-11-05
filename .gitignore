@@ -1,3 +1,5 @@
+# Java + JetBrains IntelliJ git ignore file.
+
 # Compiled class file
 *.class
 
