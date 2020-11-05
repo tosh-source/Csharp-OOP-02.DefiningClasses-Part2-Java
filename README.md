@@ -1,1 +1,1 @@
-# Csharp-OOP-02.DefiningClasses-Part2-Java
+# Java-OOP-02.DefiningClasses-Part2
