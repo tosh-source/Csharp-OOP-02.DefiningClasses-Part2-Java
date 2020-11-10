@@ -2,7 +2,7 @@ package euclidean3DSpace.model;
 
 public class Point3D {  //Unlike C#, Java do NOT provide structures for now! It will be available in near future. More about "Java Inline Classes" --> https://www.infoq.com/articles/inline-classes-java/
 
-    private static final Point3D startCoordinate = null;  //"final" is like "readonly" field on C#. "static final" is like "const" field on C#. "static final someValue = null" is like "static readonly" on C#.
+    private static final Point3D startCoordinate;  //There is MO "static readonly" in Java! NOTE: "final" is like "readonly" field on C#. "static final" is like "const" field on C#.
     private double x;
     private double y;
     private double z;
@@ -32,9 +32,9 @@ public class Point3D {  //Unlike C#, Java do NOT provide structures for now! It 
         this.z = z;
     }
 
-//    static {
-//        startCoordinate = new Point3D(setX(0.0), setY(0), setZ(0));
-//    }
+    static {
+        startCoordinate = new Point3D(0d, 0d, 0d);
+    }
     public Point3D(double x, double y, double z) {
         this.x = x;
         this.y = y;
