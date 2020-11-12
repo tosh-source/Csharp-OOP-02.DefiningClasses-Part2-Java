@@ -49,7 +49,7 @@ public final class Point3D {  //Unlike C#, Java do NOT provide structures for no
     public String toString() {
         var result = "";
         result += String.format(MessageFormat
-                .format("X:{0}, Y:(1), Z:{2}", getX(), getY(), getZ()));
+                .format("X:{0}, Y:{1}, Z:{2}", getX(), getY(), getZ()));
 
         return result;
     }
