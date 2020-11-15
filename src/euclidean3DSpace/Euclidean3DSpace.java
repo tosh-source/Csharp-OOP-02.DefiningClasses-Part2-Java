@@ -18,9 +18,9 @@ public class Euclidean3DSpace {
         points.addPoint(point3D);
         points.addPoint(Point3D.getStartCoordinate());
         points.addPoint(new Point3D(3, 3, 3));
-//        for (var item : points) {
-//
-//        }
+        for (var item : points) {
+            System.out.println(item);
+        }
         //endregion
     }
 }
