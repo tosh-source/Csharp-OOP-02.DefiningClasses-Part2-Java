@@ -19,7 +19,8 @@ public class Path implements Iterable<Point3D> {
         this.points = new ArrayList<>();
     }
 
-    //Implement iterator() to use "foreach" loop. NOTE: Implementation of "foreach" METHOD is another option to iterate collection.
+    //Implement iterator() to use "foreach" loop. ***
+    // NOTE: Implementation of "foreach" METHOD is another option to iterate collection.
     @Override
     public Iterator<Point3D> iterator() {
         return this.points.iterator();
@@ -27,4 +28,4 @@ public class Path implements Iterable<Point3D> {
 }
 
 // ** more info --> https://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html
-//How to implement iterator()  --> https://stackoverflow.com/questions/975383/how-can-i-use-the-java-for-each-loop-with-custom-classes
+// *** How to implement iterator()  --> https://stackoverflow.com/questions/975383/how-can-i-use-the-java-for-each-loop-with-custom-classes
