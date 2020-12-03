@@ -22,12 +22,13 @@ public final class PathStorage {
             while (reader.hasNextLine()) {
                 currentLine = reader.nextLine();
 
+                currentLine = currentLine.replaceAll("[^\\x00-\\x7F]", "");  //Java read BOM from file and assign as empty ("") string, which is not! This regex remove all not ASCII chars!
                 String[] splittedText = currentLine.split("X = |,| |Y = |Z = |X:|X: |Y:|Y: |Z:|Z: ");  //Use Regular expression OR "|" , to catch many strings. Example --> "ABC|abc|ONE|two"
 
                 //Remove empty entries from result
                 var tempVal = new ArrayList<>();
                 for (var item : splittedText) {
-                    if (!(item.isEmpty())){   //add only if there is a value
+                    if (!(item.isBlank())){   //add only if there is a value
                         tempVal.add(item);
                     }
                 }
