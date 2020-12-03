@@ -14,9 +14,9 @@ public final class PathStorage {
         //Method can read Point3D in format "X = 1, Y = 2, Z = 3" or "X:1 Y:2 Z:3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
 
         Path collectionOfPoints = new Path();
+        Scanner reader = null;
         try {
-            var file = new File(directory + fileName);
-            var reader = new Scanner(file);
+            reader = new Scanner(new File(directory + fileName));
 
             String currentLine;
             while (reader.hasNextLine()) {
@@ -44,6 +44,8 @@ public final class PathStorage {
 
         } catch (Exception e) {
             e.getStackTrace();
+        } finally {
+            reader.close();
         }
         return collectionOfPoints;
     }
