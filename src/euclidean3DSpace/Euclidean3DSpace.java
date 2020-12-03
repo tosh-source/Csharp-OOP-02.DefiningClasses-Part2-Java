@@ -3,6 +3,7 @@ package euclidean3DSpace;
 import euclidean3DSpace.extensions.ExtensionPointsOf3DSpace;
 import euclidean3DSpace.model.Path;
 import euclidean3DSpace.model.Point3D;
+import euclidean3DSpace.textFromFileReader.PathStorage;
 
 public class Euclidean3DSpace {
     public static void main(String[] args) {
@@ -21,6 +22,11 @@ public class Euclidean3DSpace {
         for (var item : points) {
             System.out.println(item);
         }
+
+        //Test file reader & writer
+        // PathStorage.SafePath(points);
+        Path newPointsFromFile = PathStorage.LoadPath("", "CollectionOfPoints.txt");
+
         //endregion
     }
 }
