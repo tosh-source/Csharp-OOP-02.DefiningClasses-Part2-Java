@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public final class PathStorage {
-    public static Path LoadPath(String directory, String fileName) {
+    public static Path loadPath(String directory, String fileName) {
         //Method can read Point3D in format "X = 1, Y = 2, Z = 3" or "X:1 Y:2 Z:3". There is no limit how many Point3D can be read as collection (Models.Path). Every Point3D need to be in NEW line!
 
         Path collectionOfPoints = new Path();
@@ -58,4 +58,7 @@ public final class PathStorage {
         return collectionOfPoints;
     }
 
+    public static void SafePath(){
+
+    }
 }
