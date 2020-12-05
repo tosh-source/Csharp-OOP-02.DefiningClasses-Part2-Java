@@ -4,6 +4,9 @@ import euclidean3DSpace.model.Path;
 import euclidean3DSpace.model.Point3D;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+import java.nio.file.NotDirectoryException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,13 +25,13 @@ public final class PathStorage {
             while (reader.hasNextLine()) {
                 currentLine = reader.nextLine();
 
-                currentLine = currentLine.replaceAll("[^\\x00-\\x7F]", "");  //Java read BOM from file and assign as empty ("") string, which is not! This regex remove all not ASCII chars!
+                currentLine = currentLine.replaceAll("[^\\x00-\\x7F]", "");  //WARNING: Java read BOM from file and assign as empty ("") string, which is not! This regex remove all not ASCII chars!
                 String[] splittedText = currentLine.split("X = |,| |Y = |Z = |X:|X: |Y:|Y: |Z:|Z: ");  //Use Regular expression OR "|" , to catch many strings. Example --> "ABC|abc|ONE|two"
 
                 //Remove empty entries from result
                 var tempVal = new ArrayList<>();
                 for (var item : splittedText) {
-                    if (!(item.isBlank())){   //add only if there is a value
+                    if (!(item.isBlank())) {   //add only if there is a value
                         tempVal.add(item);
                     }
                 }
@@ -43,8 +46,14 @@ public final class PathStorage {
                 collectionOfPoints.addPoint(currentPoint);
             }
 
+        } catch (FileNotFoundException notFoundException) {
+            System.out.println("File " + (fileName) + " was not found!");
+        } catch (NullPointerException nullPointerException) {
+            System.out.printf("Pathname/filename is null!");
+        } catch (IndexOutOfBoundsException outOfBoundsException) {
+            System.out.printf("More than three numbers/points are detected!");
         } catch (Exception e) {
-            e.getStackTrace();
+            System.out.println("The file can't be accessed, parsed or do not exist!" + e.getMessage());
         } finally {
             reader.close();
         }
