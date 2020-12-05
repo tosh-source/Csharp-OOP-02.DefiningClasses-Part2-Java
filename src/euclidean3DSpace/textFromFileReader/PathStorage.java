@@ -5,11 +5,7 @@ import euclidean3DSpace.model.Point3D;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
-import java.nio.file.NotDirectoryException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public final class PathStorage {
@@ -52,6 +48,8 @@ public final class PathStorage {
             System.out.printf("Pathname/filename is null!");
         } catch (IndexOutOfBoundsException outOfBoundsException) {
             System.out.printf("More than three numbers/points are detected!");
+        } catch (IllegalArgumentException argumentException) {
+            System.out.printf("Not correct numeric value!");
         } catch (Exception e) {
             System.out.println("The file can't be accessed, parsed or do not exist!" + e.getMessage());
         } finally {
