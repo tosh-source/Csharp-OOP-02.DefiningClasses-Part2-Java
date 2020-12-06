@@ -3,8 +3,11 @@ package euclidean3DSpace.textFromFileReader;
 import euclidean3DSpace.model.Path;
 import euclidean3DSpace.model.Point3D;
 
+import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,15 +56,33 @@ public final class PathStorage {
         } catch (Exception e) {
             System.out.println("The file can't be accessed, parsed or do not exist!" + e.getMessage());
         } finally {
-            reader.close();
+            if (reader != null) {
+                reader.close();
+            }
         }
         return collectionOfPoints;
     }
 
-    public static void safePath(Path collectionOfPoints){
+    public static void safePath(Path collectionOfPoints) {
         safePath(collectionOfPoints, "", "CollectionOfPoints.txt"); //Default directory and file name. In this case the output file should be in root project folder.
     }
-    public static void safePath(Path collectionOfPoints, String directory, String fileName){
 
+    public static void safePath(Path collectionOfPoints, String directory, String fileName) {
+
+        PrintStream writer = null;
+        try {
+            writer = new PrintStream((directory + fileName), "UTF-8");
+
+        } catch (FileNotFoundException foundException) {
+            System.out.printf("Pathname does not exist or file is locked by other process!");
+        } catch (UnsupportedEncodingException encodingException) {
+            System.out.println("Charset/encoding is not supported!");
+        } catch (Exception exception) {
+            System.out.printf("The file can't be created!" + exception.getMessage());
+        } finally {
+            if (writer != null) {
+                writer.close();
+            }
+        }
     }
 }
