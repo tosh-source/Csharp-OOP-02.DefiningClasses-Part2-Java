@@ -58,7 +58,10 @@ public final class PathStorage {
         return collectionOfPoints;
     }
 
-    public static void SafePath(){
+    public static void safePath(Path collectionOfPoints){
+        safePath(collectionOfPoints, "", "CollectionOfPoints.txt"); //Default directory and file name. In this case the output file should be in root project folder.
+    }
+    public static void safePath(Path collectionOfPoints, String directory, String fileName){
 
     }
 }
