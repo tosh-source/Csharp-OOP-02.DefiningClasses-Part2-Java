@@ -3,7 +3,6 @@ package euclidean3DSpace.textFromFileReader;
 import euclidean3DSpace.model.Path;
 import euclidean3DSpace.model.Point3D;
 
-import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
