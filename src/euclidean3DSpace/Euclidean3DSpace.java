@@ -24,9 +24,8 @@ public class Euclidean3DSpace {
         }
 
         //Test file reader & writer
-        // PathStorage.SafePath(points);
+        PathStorage.safePath(points);
         Path newPointsFromFile = PathStorage.loadPath("", "CollectionOfPoints.txt");
-
         //endregion
     }
 }
