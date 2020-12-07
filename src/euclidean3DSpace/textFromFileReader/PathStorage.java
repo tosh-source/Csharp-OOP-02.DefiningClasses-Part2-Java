@@ -72,6 +72,10 @@ public final class PathStorage {
         try {
             writer = new PrintStream((directory + fileName), "UTF-8");
 
+            for (var currentPoint : collectionOfPoints) {
+                writer.println(currentPoint.toString());
+            }
+
         } catch (FileNotFoundException foundException) {
             System.out.printf("Pathname does not exist or file is locked by other process!");
         } catch (UnsupportedEncodingException encodingException) {
