@@ -1,6 +1,6 @@
 package euclidean3DSpace.extensions;
 
-import euclidean3DSpace.model.Point3D;
+import euclidean3DSpace.models.Point3D;
 
 public final class ExtensionPointsOf3DSpace { //In Java, static classes can be declared only as nested class! **
 

@@ -1,8 +1,8 @@
 package euclidean3DSpace;
 
 import euclidean3DSpace.extensions.ExtensionPointsOf3DSpace;
-import euclidean3DSpace.model.Path;
-import euclidean3DSpace.model.Point3D;
+import euclidean3DSpace.models.Path;
+import euclidean3DSpace.models.Point3D;
 import euclidean3DSpace.textFromFileReader.PathStorage;
 
 public class Euclidean3DSpace {

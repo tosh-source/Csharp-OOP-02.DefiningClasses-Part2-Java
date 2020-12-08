@@ -1,4 +1,4 @@
-package euclidean3DSpace.model;
+package euclidean3DSpace.models;
 
 import java.util.AbstractCollection;
 import java.util.ArrayList;
