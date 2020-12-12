@@ -1,5 +1,6 @@
 package genericClasses.models;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -20,9 +21,20 @@ public class GenericList<T> implements Iterable<T> {
         this.elements = elements;
     }
 
+    public GenericList() {
+        this(4);
+    }
+
+    public GenericList(int elementsCapacity) {
+        this.elements = (T[]) Array.newInstance(null, elementsCapacity);  //**
+    }
+
     @Override
     public Iterator<T> iterator() {
         return Arrays.stream(this.getElements()).iterator();
     }
 
 }
+
+//** How to create a generic array in Java? -> https://stackoverflow.com/questions/529085/how-to-create-a-generic-array-in-java
+//** array of type T (Java generics) -> https://stackoverflow.com/questions/30778790/array-of-type-t-java-generics
