@@ -17,18 +17,17 @@ public class GenericList<T> implements Iterable<T> {
         this.elements = elements;
     }
 
-    public GenericList(T[] elements) {
-        this.elements = elements;
-    }
-
     public GenericList() {
         this(4);
     }
 
     public GenericList(int elementsCapacity) {
-        this.elements = (T[]) Array.newInstance(null, 0);  //**
+        this.elements = (T[]) Array.newInstance(Class.class, elementsCapacity);
     }
 
+    public GenericList(T[] elements) {
+        this.elements = elements;
+    }
     @Override
     public Iterator<T> iterator() {
         return Arrays.stream(this.getElements()).iterator();
