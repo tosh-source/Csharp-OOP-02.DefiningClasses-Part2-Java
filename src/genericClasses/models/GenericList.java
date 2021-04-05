@@ -22,7 +22,7 @@ public class GenericList<T> implements Iterable<T> {
     }
 
     public GenericList(int elementsCapacity) {
-        this.elements = (T[]) Array.newInstance(Class.class, elementsCapacity);  //How to create generics **
+        this.elements = (T[]) new Object[elementsCapacity];  //How to create generics **
     }
 
     public GenericList(T[] elements) {
@@ -30,7 +30,10 @@ public class GenericList<T> implements Iterable<T> {
     }
 
     public void Add(T element) {
+        //TO DO: Autogrow()
         this.elements[currentPosition] = element;
+        currentPosition++;
+        //TO DO: Autogrow()
     }
 
     @Override
