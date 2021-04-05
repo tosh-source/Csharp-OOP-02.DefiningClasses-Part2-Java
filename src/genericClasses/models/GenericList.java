@@ -49,4 +49,4 @@ public class GenericList<T> implements Iterable<T> {
 //** array of type T (Java generics) -> https://stackoverflow.com/questions/30778790/array-of-type-t-java-generics
 //** Java Code Examples for java.lang.reflect.Array#newInstance() -> https://www.programcreek.com/java-api-examples/?class=java.lang.reflect.Array&method=newInstance
 
-//*** https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/
+//*** How to implementing Iterator() and Iterable<> interface -> https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/
