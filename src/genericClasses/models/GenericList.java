@@ -36,6 +36,19 @@ public class GenericList<T> implements Iterable<T> {
         //TO DO: Autogrow()
     }
 
+    private void AutoGrow() {
+
+        if (currentPosition >= this.getElements().length - 1) {
+            var tempElement = (T[]) new Object[this.getElements().length * 2];
+
+            for (int index = 0; index <= this.getElements().length - 1; index++) {
+                tempElement[index] = this.getElements()[index];
+            }
+
+            this.setElements(tempElement);
+        }
+    }
+
     @Override
     public Iterator<T> iterator() {
         return Arrays.stream(this.getElements()).iterator();  // How to create iterator ***
