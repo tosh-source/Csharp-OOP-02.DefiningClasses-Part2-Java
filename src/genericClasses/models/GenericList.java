@@ -30,10 +30,13 @@ public class GenericList<T> implements Iterable<T> {
     }
 
     public void Add(T element) {
-        //TO DO: Autogrow()
+
+        AutoGrow();
+
         this.elements[currentPosition] = element;
         currentPosition++;
-        //TO DO: Autogrow()
+
+        AutoGrow();
     }
 
     private void AutoGrow() {
