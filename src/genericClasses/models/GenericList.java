@@ -28,6 +28,11 @@ public class GenericList<T> implements Iterable<T> {
     public GenericList(T[] elements) {
         this.elements = elements;
     }
+
+    public void Add(T element) {
+        this.elements[currentPosition] = element;
+    }
+
     @Override
     public Iterator<T> iterator() {
         return Arrays.stream(this.getElements()).iterator();  // How to create iterator ***
