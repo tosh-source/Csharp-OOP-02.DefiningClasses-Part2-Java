@@ -21,8 +21,8 @@ public class GenericList<T> implements Iterable<T> {
         this(4);
     }
 
-    public GenericList(int elementsCapacity) {
-        this.elements = (T[]) new Object[elementsCapacity];  //How to create generics **
+    public GenericList(int elementsCapacity) {  //How to initialize a GenericArray* How to create generics**
+        this.elements = (T[]) new Object[elementsCapacity];  //Possible solution --> "this.elements = (T[]) Array.newInstance(Class.class, elementsCapacity);"
     }
 
     public GenericList(T[] elements) {
@@ -42,6 +42,8 @@ public class GenericList<T> implements Iterable<T> {
     }
 
 }
+
+//* How to initialize generic array? -> https://stackoverflow.com/questions/50266224/how-to-initialize-generic-array
 
 //** How to create a generic array in Java? -> https://stackoverflow.com/questions/529085/how-to-create-a-generic-array-in-java
 //** array of type T (Java generics) -> https://stackoverflow.com/questions/30778790/array-of-type-t-java-generics
