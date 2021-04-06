@@ -1,6 +1,5 @@
 package genericClasses.models;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -79,6 +78,17 @@ public class GenericList<T> implements Iterable<T> {
         return Arrays.stream(this.getElements()).iterator();  // How to create iterator ***
     }
 
+    @Override
+    public String toString() {
+
+        var result = "";
+
+        for (var element : this.getElements()) {
+            result += element + System.lineSeparator();
+        }
+
+        return result;
+    }
 }
 
 //* How to initialize generic array? -> https://stackoverflow.com/questions/50266224/how-to-initialize-generic-array

@@ -12,8 +12,7 @@ public class Test {
 
 
         for (var genericInt : genericInts) {
-            var tmpStr = genericInt != null ? genericInt.toString() : "";  //Generic array can be initialized, but can be null (have no value). This will prevent exception.
-            System.out.println(String.join("", tmpStr));
+            System.out.println(genericInt);
         }
 
     }
