@@ -39,6 +39,28 @@ public class GenericList<T> implements Iterable<T> {
         AutoGrow();
     }
 
+    public void Remove(int index) {  //Remove element by given index.
+
+        //TO DO: IndexOutOfRangeExceptionHandler(index);
+        var tempArrOfElements = (T[]) new Object[this.getElements().length - 1];
+
+        //1.Copy first part of array.
+        for (int firstPartOfElements = 0; firstPartOfElements < index; firstPartOfElements++) {
+            tempArrOfElements[firstPartOfElements] = this.getElements()[firstPartOfElements];
+        }
+
+        //2.Skip the selected element.
+
+        //3.Copy second part of array.
+        for (int secondPartOfElements = this.getElements().length-1; secondPartOfElements > index; secondPartOfElements--) {
+           tempArrOfElements[secondPartOfElements -1] = getElements()[secondPartOfElements];
+        }
+
+        this.setElements(tempArrOfElements);
+
+        currentPosition--;
+    }
+
     private void AutoGrow() {
 
         if (currentPosition >= this.getElements().length - 1) {
