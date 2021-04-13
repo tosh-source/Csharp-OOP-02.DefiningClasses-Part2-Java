@@ -79,7 +79,7 @@ public class GenericList<T> implements Iterable<T> {
         return Arrays.stream(this.getElements()).iterator();  // How to create iterator ***
     }
 
-    //Java does not allow operator overloading, but generic T is still accessible.
+    //Java does not allow operator overloading, but generic T is still accessible through index. See below!
     //this.getElements()[index]
     //this.elements[index]
 
