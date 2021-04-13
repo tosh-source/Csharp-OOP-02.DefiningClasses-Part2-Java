@@ -40,7 +40,8 @@ public class GenericList<T> implements Iterable<T> {
 
     public void Remove(int index) {  //Remove element by given index.
 
-        //TO DO: IndexOutOfRangeExceptionHandler(index);
+        IndexOutOfRangeExceptionHandler(index);
+
         var tempArrOfElements = (T[]) new Object[this.getElements().length - 1];
 
         //1.Copy first part of array.
@@ -51,8 +52,8 @@ public class GenericList<T> implements Iterable<T> {
         //2.Skip the selected element.
 
         //3.Copy second part of array.
-        for (int secondPartOfElements = this.getElements().length-1; secondPartOfElements > index; secondPartOfElements--) {
-           tempArrOfElements[secondPartOfElements -1] = getElements()[secondPartOfElements];
+        for (int secondPartOfElements = this.getElements().length - 1; secondPartOfElements > index; secondPartOfElements--) {
+            tempArrOfElements[secondPartOfElements - 1] = getElements()[secondPartOfElements];
         }
 
         this.setElements(tempArrOfElements);
@@ -78,12 +79,26 @@ public class GenericList<T> implements Iterable<T> {
         return Arrays.stream(this.getElements()).iterator();  // How to create iterator ***
     }
 
+    //Java does not allow operator overloading, but generic T is still accessible.
+    //this.getElements()[index]
+    //this.elements[index]
+
+    private void IndexOutOfRangeExceptionHandler(Integer index) {
+
+        if (index < 0 || index > this.getElements().length - 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+    }
+
     @Override
     public String toString() {
 
         var result = "";
 
         for (var element : this.getElements()) {
+            if (element == null) {
+                continue;
+            }
             result += element + System.lineSeparator();
         }
 
